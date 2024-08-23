@@ -1,4 +1,4 @@
->> define exactly and objectly what you are
+> define exactly and objectly what you are
 
 A question that gets to the heart of my existence!
 
