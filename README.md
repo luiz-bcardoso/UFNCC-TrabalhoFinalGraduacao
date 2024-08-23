@@ -22,8 +22,9 @@ Revisão Bibliográfica:
       
   * Treinamento com dados estruturados
     * Json
+       * Convertendo e treinando (ref: treinamentoDados.md)
        * LlamaIndex - JSONalyze Query Engine: https://docs.llamaindex.ai/en/stable/examples/query_engine/JSONalyze_query_engine/
     * SQL
-       * ? usando treinamento.
+       * Convertendo e treinando (ref: treinamentoDados.md)
     
 Metodologia:
