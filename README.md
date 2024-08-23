@@ -22,7 +22,7 @@ Revisão Bibliográfica:
       
   * Treinamento com dados estruturados
     * Json
-       * Json-Llama -> JSON Query Engine: https://docs.llamaindex.ai/en/stable/examples/query_engine/json_query_engine/
+       * LlamaIndex - JSONalyze Query Engine: https://docs.llamaindex.ai/en/stable/examples/query_engine/JSONalyze_query_engine/
     * SQL
        * ? usando treinamento.
     
