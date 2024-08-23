@@ -17,7 +17,7 @@ Revisão Bibliográfica:
   * LLM - Large Language Model
   * NLP - Natural Language Processing
   * Chatbot
-     * Ollama
+     * Ollama: https://ollama.com/
         * Llama 3.1 8B
       
   * Treinamento com dados estruturados
