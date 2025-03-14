@@ -1,30 +1,17 @@
-## Desenvolvimento de um módulo Python-Django para geração de relatórios usando chatbot local
+### **Desenvolvimento de um módulo Python Django para geração de relatórios usando chatbot local**
+---
+This project aims to develop an application that uses the user's input in natural language (NLP) to generate specific SQL queries that will be executed on the server's database. The user's input is processed by the LLM (Large Language Model) and, with the help of RAG (Retrieval-Augmented Generation), it retrieves the appropriate tables and attributes.
 
-Introdução: 
-  * Este projeto tem por sua finalidade, desenvolVer um módulo integrável a um sistema web usando Python-Django que utilize de sua base de dados para gerar relatórios customizados de acordo com a necessiadade do usuário.
-  * A geração desse relatorio será via textual e sera gerada a partir de uma interação com chatbot (LLM) pré-treinado gerador com processador de linguagem natural (PLN).
+* The LLM does not have direct access to the database; it only knows the schema and constructs the queries.
+* The LLM runs locally using Meta's deprecated model, `Llama 3.1`, with a free Google Colab GPU instance for testing.
 
-Revisão Bibliográfica:
-  * WebService
-    * Framework
-      * Django: e um framework que usa Python para gerenciar o back-end do servidor
-      * Back-end: o que e back-end
-        * Python
-        * MySQL
-      * Front-end: o que e front-end
-        * HTML/CSS/JS
-      
-  * LLM - Large Language Model
-  * NLP - Natural Language Processing
-  * Chatbot
-     * Ollama: https://ollama.com/
-        * Llama 3.1 8B
-      
-  * Treinamento com dados estruturados
-    * Json
-       * Convertendo e treinando (ref: treinamentoDados.md)
-       * LlamaIndex - JSONalyze Query Engine: https://docs.llamaindex.ai/en/stable/examples/query_engine/JSONalyze_query_engine/
-    * SQL
-       * Convertendo e treinando (ref: treinamentoDados.md)
-    
-Metodologia:
+### Technologies Used:
+* **Python 3**
+  * **Django Web Framework**
+    * **HTML / CSS / JS**
+* **Oracle MySQL Database Management System (DBMS)**
+* **LLM - Large Language Model**
+* **NLP - Natural Language Processing**
+* **Structured Data**
+  * JSON
+  * SQL
