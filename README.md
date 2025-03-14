@@ -7,8 +7,9 @@ This project aims to develop an application that uses the user's input in natura
 
 ### Technologies Used:
 * **Python 3**
-  * **Django Web Framework**
-    * **HTML / CSS / JS**
+  * Jupyter Notebook
+  * Django Web Framework
+    * HTML / CSS / JS
 * **Oracle MySQL Database Management System (DBMS)**
 * **LLM - Large Language Model**
 * **NLP - Natural Language Processing**
