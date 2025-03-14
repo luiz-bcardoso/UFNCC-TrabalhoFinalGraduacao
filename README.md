@@ -7,6 +7,9 @@ This project aims to develop an application that uses the user's input in natura
 
 ![alt text](https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/blob/main/exemplo-pergunta.png?raw=true)
 
+![alt text](https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/blob/main/visao-geral.png?raw=true)
+
+
 ### Technologies Used:
 * **Python 3**
   * Jupyter Notebook
