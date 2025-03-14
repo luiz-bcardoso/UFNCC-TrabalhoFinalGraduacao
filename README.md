@@ -1,4 +1,4 @@
-### **Desenvolvimento de um módulo Python Django para gerar relatórios com chatbot local**
+### **Módulo LLM Local em Sistema Web para Geração de Relatórios Textuais via Prompt**
 ---
 This project aims to develop an application that uses the user's input in natural language (NLP) to generate specific SQL queries that will be executed on the server's database. The user's input is processed by the LLM (Large Language Model) and, with the help of RAG (Retrieval-Augmented Generation), it retrieves the appropriate tables and attributes.
 
