@@ -5,6 +5,8 @@ This project aims to develop an application that uses the user's input in natura
 * The LLM does not have direct access to the database; it only knows the schema and constructs the queries.
 * The LLM runs locally using Meta's deprecated model, `Llama 3.1`, with a free Google Colab GPU instance for testing.
 
+![alt text](https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/blob/main/exemplo-pergunta.png?raw=true)
+
 ### Technologies Used:
 * **Python 3**
   * Jupyter Notebook
