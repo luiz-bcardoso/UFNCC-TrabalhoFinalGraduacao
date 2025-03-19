@@ -4,7 +4,7 @@ import xmlrpc.client
 app = Flask(__name__)
 
 # URL utilizada para conexão do servidor RPC
-url_servidor = "https://9421-34-118-195-203.ngrok-free.app"
+url_servidor = "https://1ea9-35-204-181-100.ngrok-free.app"
 
 # Realiza a conexão com o servidor RPC pela URL.
 proxy = xmlrpc.client.ServerProxy(url_servidor)
