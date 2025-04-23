@@ -36,7 +36,7 @@ def __main__():
     Função principal para iniciar o processo de geração de consulta SQL.
     """
     # Pergunta do usuário
-    pergunta = "Me informe o nome, email, cpf e data de nascimento de todos os usuários."
+    pergunta = input("Digite sua pergunta: ")
 
     # Iniciar o processo
     resposta = iniciar_pergunta(pergunta)
