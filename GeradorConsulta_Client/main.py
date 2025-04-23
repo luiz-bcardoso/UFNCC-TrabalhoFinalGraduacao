@@ -1,5 +1,4 @@
 from conecta_llm import Conecta
-from decouple import config
 import time
 
 def iniciar_pergunta(pergunta):

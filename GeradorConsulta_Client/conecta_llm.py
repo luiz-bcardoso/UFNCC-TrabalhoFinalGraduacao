@@ -1,7 +1,6 @@
 import datetime
 import xmlrpc.client
 
-from decouple import config
 from django.db import connection
 from django.template import Template, Context
 
@@ -10,7 +9,8 @@ class Conecta:
     @staticmethod
     def conecta_rpc():
         # Realiza a conexão com o serivor RPC pela URL.
-        url_servidor = config('GERADORSQL_URL')
+        url_servidor = '<COLOQUE_SUA_URL_AQUI>'
+        
         try:
             proxy = xmlrpc.client.ServerProxy(url_servidor)
             return proxy
