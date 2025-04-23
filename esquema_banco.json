@@ -1,0 +1,1042 @@
+{
+    "avaliacao_avaliacao": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "dt_avaliacao_responsavel",
+            "tipo": "datetime(6)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_introducao_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_justificativa_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_objetivos_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_desenho_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_local_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_amostra_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_inclusao_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_coleta_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_coleta_instrumento_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_etica_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_riscos_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_assentimento_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_consentimento_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_confidencialidade_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_exequivel_estudo_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_cronograma_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_orcamento_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_orcamento_agencia_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_referencias_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_assitencia_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_relevancia_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_mudanca_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_nova_pratica_assistencial_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_produto_responsavel",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "parecer_avaliador_responsavel",
+            "tipo": "longtext",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_avaliacao_suplente",
+            "tipo": "datetime(6)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_introducao_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_justificativa_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_objetivos_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_desenho_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_local_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_amostra_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_inclusao_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_coleta_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_coleta_instrumento_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_etica_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_riscos_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_assentimento_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_consentimento_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_confidencialidade_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_metodologia_exequivel_estudo_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_cronograma_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_orcamento_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_orcamento_agencia_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_referencias_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_assitencia_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_relevancia_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_mudanca_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_nova_pratica_assistencial_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tem_produto_suplente",
+            "tipo": "varchar(25)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "parecer_avaliador_suplente",
+            "tipo": "longtext",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "avaliador_responsavel_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "avaliador_suplente_id",
+            "tipo": "int(11)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "submissao_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "UNI",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_limite_avaliacao",
+            "tipo": "datetime(6)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "comissao_comissao": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "status",
+            "tipo": "varchar(25)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_avaliacao_comissao",
+            "tipo": "datetime(6)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "avaliacao_comissao_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "UNI",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_parecer_comissao",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_parecer_comissao_pendencia",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "comentario",
+            "tipo": "longtext",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_trancado",
+            "tipo": "date",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "edital_edital": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "numero",
+            "tipo": "varchar(20)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "descricao",
+            "tipo": "varchar(200)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "abertura",
+            "tipo": "date",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "encerra",
+            "tipo": "date",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "instituicao_instituicao": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "nome",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "sigla",
+            "tipo": "varchar(20)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "site",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "contato",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "email",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "telefone",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "submissao_submissao": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "local_execucao",
+            "tipo": "varchar(150)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "area",
+            "tipo": "varchar(25)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "curso_graduacao_vinculado",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "curso_pos_graduacao",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "grupo_pesquisa",
+            "tipo": "varchar(50)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "titulo",
+            "tipo": "longtext",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "resumo",
+            "tipo": "longtext",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "palavras_chave",
+            "tipo": "longtext",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_projeto",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "edital_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "responsavel_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_atualizacao_pendencia_projeto",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_comite_etica",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "registros_apos_aprovacao",
+            "tipo": "longtext",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_atualizacao_submissao",
+            "tipo": "datetime(6)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_relatorio_final",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_relatorio_parcial",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_emenda1",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_emenda2",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "arquivo_emenda3",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "dt_cadastro_submissao",
+            "tipo": "datetime(6)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "submissao_submissao_colaborador": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "submissao_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "usuario_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "submissao_submissao_instituicoes_parceiras": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "submissao_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "instituicao_id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ],
+    "usuario_usuario": [
+        {
+            "nome": "id",
+            "tipo": "int(11)",
+            "nulo": "NO",
+            "chave": "PRI",
+            "default": null,
+            "extra": "auto_increment"
+        },
+        {
+            "nome": "password",
+            "tipo": "varchar(128)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "last_login",
+            "tipo": "datetime(6)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "tipo",
+            "tipo": "varchar(15)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "nome",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "email",
+            "tipo": "varchar(100)",
+            "nulo": "NO",
+            "chave": "UNI",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "data_nasc",
+            "tipo": "date",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "cpf",
+            "tipo": "varchar(14)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "rg",
+            "tipo": "varchar(14)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "matricula",
+            "tipo": "varchar(10)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "lattes",
+            "tipo": "varchar(100)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "area_conhecimento_cnpq",
+            "tipo": "varchar(50)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "curso_graduacao_vinculado",
+            "tipo": "varchar(50)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "curso_pos_graduacao",
+            "tipo": "varchar(50)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "grupo_pesquisa",
+            "tipo": "varchar(50)",
+            "nulo": "YES",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "is_active",
+            "tipo": "tinyint(1)",
+            "nulo": "NO",
+            "chave": "",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "instituicao_id",
+            "tipo": "int(11)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        },
+        {
+            "nome": "slug",
+            "tipo": "varchar(200)",
+            "nulo": "YES",
+            "chave": "MUL",
+            "default": null,
+            "extra": ""
+        }
+    ]
+}

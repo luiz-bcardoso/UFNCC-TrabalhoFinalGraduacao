@@ -38,7 +38,7 @@ class Conecta:
             resposta = proxy.gerar_resposta(pergunta)
             return resposta
         except Exception as e:
-            erro = f"Erro de resposta, contate o administrador.\nErro: {str(e)}"
+            erro = f"Não foi possível conectar no servidor para gerar a consulta. Por favor, tente novamente mais tarde."
             return erro
         
     @staticmethod

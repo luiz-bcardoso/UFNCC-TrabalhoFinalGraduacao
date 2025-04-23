@@ -1,0 +1,8 @@
+/GeradorConsulta_Client/venv
+/GeradorConsulta_Client/__pycache__/
+.DS_Store
+*.pyc
+.env
+.vscode
+.idea
+db.sqlite3
