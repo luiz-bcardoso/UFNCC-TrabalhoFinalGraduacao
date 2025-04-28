@@ -1,5 +1,5 @@
-/GeradorConsulta_Client/venv
-/GeradorConsulta_Client/__pycache__/
+/gerador_consulta_client/venv
+/gerador_consulta_client/__pycache__/
 .DS_Store
 *.pyc
 .env
