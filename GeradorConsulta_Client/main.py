@@ -1,45 +1,48 @@
 from conecta_llm import Conecta
 import time
 
+def atualizar_contexto():
+    print(f"> Atualizando contexto...")
+   
+    tempo_inicial = time.time()
+    resposta = Conecta.atualiza_contexto()
+    tempo_passado = time.time() - tempo_inicial
+    
+    print(resposta)
+    
+    tempo_total = f"{tempo_passado:.2f}s"
+    return tempo_total
+
 def iniciar_pergunta(pergunta):
-    """
-    Função para iniciar o processo de geração de consulta SQL.
-    """
     try:        
-        # 1. Atualizar o contexto do banco de dados (Manualmente, somente admin)
-        print(f"> Atualizando contexto...")
-        start_time = time.time()
-        resposta = Conecta.atualiza_contexto()
-        elapsed_time = time.time() - start_time
-        print(f"[{elapsed_time:.2f}s] | Resposta: {resposta}\n")
-
-        # 2. Gerar a consulta SQL via RPC
-        print(f"> Gerando consulta SQL...")
+        # 1. Gerar a consulta SQL via RPC
+        print(f"[0.00s] > Gerando consulta SQL...")
+        tempo_inicial = time.time()
         resposta_sql = Conecta.gerar_sql(pergunta)
-        elapsed_time = time.time() - start_time
-        print(f"[{elapsed_time:.2f}s] | Resposta: \n'{resposta_sql};'\n")
+        tempo_passado = time.time() - tempo_inicial 
+        print(f"[{tempo_passado:.2f}s] | Resposta: \n'{resposta_sql}'\n")
 
-        # 3. Executa a consulta SQL
+        # 2. Executa a consulta SQL
         print(f"> Aplicando consulta SQL...")
         resposta_execucao = Conecta.executa_sql(resposta_sql)
-        elapsed_time = time.time() - start_time
-        print(f"[{elapsed_time:.2f}s] | Resposta: {resposta_execucao}\n")
+        tempo_passado = time.time() - tempo_inicial
+        print(f"[{tempo_passado:.2f}s] | Resposta: \n{resposta_execucao}\n")
         
-        total_time = time.time() - start_time
-        return f"[{total_time:.2f}s] | Fim do processo."
-  
+        # 3. Retorna o tempo total para gerar resposta
+        tempo_total = f"{tempo_passado:.2f}s"
+        return tempo_total
+    
     except Exception as e:
         return f"Erro ao iniciar o processo: {str(e)}"
 
 def __main__():
-    """
-    Função principal para iniciar o processo de geração de consulta SQL.
-    """
-    # Pergunta do usuário
+    # 1. Atualizar o contexto do banco de dados (Manualmente, somente admin)
+    tempo_atualizar = atualizar_contexto()
+    print('Tempo total para atualizar contexto: ', tempo_atualizar)
+    
+    # 2. Faz uma sequência de perguntas
     pergunta = input("Digite sua pergunta: ")
-
-    # Iniciar o processo
-    resposta = iniciar_pergunta(pergunta)
-    print(resposta)
+    tempo_pergunta = iniciar_pergunta(pergunta)
+    print('Tempo total para criar relatório: ',tempo_pergunta)
     
 __main__()
