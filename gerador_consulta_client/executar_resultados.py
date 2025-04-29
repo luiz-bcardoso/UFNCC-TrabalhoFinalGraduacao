@@ -4,9 +4,11 @@
 ## Falhas = entrou em algum except? (contabiliza)
 ## Consultas = numero de vezes que faz a mesma pergunta
 
+import sqlite3
+import time
+
 from conecta_llm import Conecta
 from resultado import Resultado
-import time
 
 def calcular_precisao(linha_resultado, linha_referencia):
     total_elementos = len(linha_referencia)
@@ -39,7 +41,7 @@ def gerar_resultados(lista_perguntas, lista_sql_referencia, qtd_execucoes):
             for i in range(qtd_execucoes):
                 #1. Gera a consulta SQL via RPC (Temporizado)
                 tempo_inicial = time.time()
-                sql_gerado = Conecta.gerar_sql(pergunta)
+                sql_gerado = Conecta.gera_sql(pergunta)
                 tempo_passado = time.time() - tempo_inicial
                 lista_tempos.append(tempo_passado)
                 
@@ -78,9 +80,24 @@ def __main__():
     
     lista_sql_ref = ["SELECT nome, email, data_nasc FROM usuario_usuario WHERE tipo = 'ADMINISTRADOR'",
                      "SELECT nome, sigla, site FROM instituicao_instituicao"]
+
     
-    lista_resultados = gerar_resultados(lista_perguntas, lista_sql_ref, 5)
-    for resultado in lista_resultados:
-        print(resultado)
+    # Verifica se a consulta é segura
+    Conecta.consulta_sql_safe(lista_sql_ref[0])
+
+    connection = sqlite3.connect("../db.sqlite3")
+    cursor = connection.cursor()
+    
+    with connection:
+        cursor.execute(lista_sql_ref[0])
+        resultados = cursor.fetchall()
+        nome_campos = [i[0].upper() for i in cursor.description]
+        cursor.close()
+
+    print(f"Resultado da consulta SQL: {resultados}")
+    print(f"Nome dos campos: {nome_campos}")
+
+    lista_filtrada = Conecta.filtra_sql(resultados, nome_campos)
+    print(f"Lista filtrada: {lista_filtrada}")
     
 __main__()

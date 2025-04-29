@@ -18,7 +18,7 @@ def iniciar_pergunta(pergunta):
         # 1. Gerar a consulta SQL via RPC
         print(f"[0.00s] > Gerando consulta SQL...")
         tempo_inicial = time.time()
-        resposta_sql = Conecta.gerar_sql(pergunta)
+        resposta_sql = Conecta.gera_sql(pergunta)
         tempo_passado = time.time() - tempo_inicial 
         print(f"[{tempo_passado:.2f}s] | Resposta: \n'{resposta_sql}'\n")
 

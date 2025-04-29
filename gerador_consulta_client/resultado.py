@@ -9,4 +9,4 @@ class Resultado:
         self.qtd_execucoes = qtd_execucoes
         
     def __str__(self):
-        return f"Resultado(pergunta={self.pergunta}, tempo={self.tempo}, precisao={self.precisao}, consistencia={self.consistencia}, falhas={self.falhas}, qtd_execucoes={self.qtd_execucoes})"
+        return f"Resultado(pergunta={self.pergunta}, tempo={self.tempo:.4f}, precisao={self.precisao:.2f}, consistencia={self.consistencia:.2f}, falhas={self.falhas}, qtd_execucoes={self.qtd_execucoes})"

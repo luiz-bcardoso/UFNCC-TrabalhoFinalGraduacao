@@ -32,7 +32,7 @@ class Conecta:
             return f"Erro ao atualizar contexto. Exceção: {str(e)}"
     
     @staticmethod
-    def gerar_sql(pergunta):
+    def gera_sql(pergunta):
         try:
             proxy = Conecta.conecta_rpc()
             resposta = proxy.gerar_resposta(pergunta)
@@ -84,39 +84,46 @@ class Conecta:
                 
                 cursor.close()
                 
-            # Filtra campos indesejados
-            campos_indesejados = {'SLUG', 'PASSWORD', 'ARQUIVO_PROJETO'}
-            indices_validos = [i for i, nome in enumerate(nomes_campos) if nome not in campos_indesejados]
-            nomes_campos = [nomes_campos[i] for i in indices_validos]
-                
-            # Se houver mais de 5 colunas, retorna a mensagem
-            if len(nomes_campos) > 5:
-                return "Mais de 5 colunas retornadas. Por favor, refine sua consulta."
-            
-            # Converte os resultados (tuplas) em uma lista de listas, filtrando os campos indesejados
-            lista_de_lista = [[linha[i] for i in indices_validos] for linha in resultados]
-
-            # Formata os objetos datetime.date/datetime para o formato brasileiro
-            for linha in lista_de_lista:
-                for i, valor in enumerate(linha):
-                    if isinstance(valor, datetime.date):
-                        linha[i] = valor.strftime('%d/%m/%Y')
-                    if isinstance(valor, datetime.datetime):
-                        linha[i] = valor.strftime('%d/%m/%Y %H:%M:%S')
-            
             # Se não houver "order by" na consulta, ordena a lista de listas   
             if "order by" not in script_sql.upper():
-                lista_dados = sorted(lista_de_lista, key=lambda x: x[0])
+                lista_dados = sorted(resultados, key=lambda x: x[0])
             else:
-                lista_dados = lista_de_lista
+                lista_dados = resultados
                 
-            return Conecta.gerar_tabela_html(nomes_campos, lista_dados)
-            
+            # Filtra os resultados
+            lista_filtrada = Conecta.filtra_sql(lista_dados, nomes_campos)
+
+            # Gera a tabela HTML com os resultados filtrados
+            return Conecta.gera_tabela_html(nomes_campos, lista_filtrada)
         except Exception as e:
             return f"Erro na execução da consulta. Contate o administrador. Erro: {str(e)}"
     
     @staticmethod
-    def gerar_tabela_html(nomes_campos, lista_dados):
+    def filtra_sql(resultados, nomes_campos):
+        # Filtra campos indesejados
+        campos_indesejados = {'SLUG', 'PASSWORD', 'ARQUIVO_PROJETO'}
+        indices_validos = [i for i, nome in enumerate(nomes_campos) if nome not in campos_indesejados]
+        nomes_campos = [nomes_campos[i] for i in indices_validos]
+        
+        # Se houver mais de 5 colunas, retorna a mensagem
+        if len(nomes_campos) > 5:
+            return "Mais de 5 colunas retornadas. Por favor, refine sua consulta."
+        
+        # Converte os resultados (tuplas) em uma lista de listas, filtrando os campos indesejados
+        lista_dados = [[linha[i] for i in indices_validos] for linha in resultados]
+
+        # Formata os objetos datetime.date/datetime para o formato brasileiro
+        for linha in lista_dados:
+            for i, valor in enumerate(linha):
+                if isinstance(valor, datetime.date):
+                    linha[i] = valor.strftime('%d/%m/%Y')
+                if isinstance(valor, datetime.datetime):
+                    linha[i] = valor.strftime('%d/%m/%Y %H:%M:%S')
+                        
+        return lista_dados
+    
+    @staticmethod
+    def gera_tabela_html(nomes_campos, lista_dados):
         template_str = """
                         <h2 style="text-align:center;">Tabela de Resposta</h2>
                         <table class="table table-hover">
