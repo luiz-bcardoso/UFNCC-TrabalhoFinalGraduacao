@@ -1,17 +1,48 @@
 import datetime
 import xmlrpc.client
 
+from decouple import config
 from django.db import connection
 from django.template import Template, Context
+
+from django.db.migrations.executor import MigrationExecutor
+from django.db import connections
 
 class Conecta:
     
     @staticmethod
+    def houve_alteracao_banco():
+        try:
+            connection = connections['default']
+            executor = MigrationExecutor(connection)
+
+            # Pega as migrações aplicadas e as pendentes
+            applied_migrations = executor.loader.applied_migrations
+            all_migrations = executor.loader.graph.nodes.keys()
+
+            # Diferença indica migrações pendentes
+            pending = set(all_migrations) - set(applied_migrations)
+
+            if pending:
+                print("Há migrações pendentes:")
+                for mig in pending:
+                    print(mig)
+                return True
+            else:
+                print("Todas as migrações estão aplicadas.")
+                return False
+        except Exception as e:
+            print('Erro', e)
+            return False
+    
+    @staticmethod
     def conecta_rpc():
         # Realiza a conexão com o serivor RPC pela URL.
-        url_servidor = '<COLOQUE_SUA_URL_AQUI>'
-        
+        url_servidor = config('GERADORSQL_URL')
         try:
+            # if Conecta.houve_alteracao_banco():
+            #     Conecta.atualiza_contexto()
+            
             proxy = xmlrpc.client.ServerProxy(url_servidor)
             return proxy
         except Exception as e:
@@ -26,7 +57,7 @@ class Conecta:
             with open("esquema_banco.json", "r") as file:
                 #Lê o arquivo Json e envia para o servidor
                 json_data = file.read()
-                resposta = proxy.atualizar_contexto(json_data)
+                resposta = proxy.atualiza_contexto(json_data)
                 return resposta
         except Exception as e:
             return f"Erro ao atualizar contexto. Exceção: {str(e)}"
@@ -35,14 +66,14 @@ class Conecta:
     def gera_sql(pergunta):
         try:
             proxy = Conecta.conecta_rpc()
-            resposta = proxy.gerar_resposta(pergunta)
+            resposta = proxy.gera_resposta(pergunta)
             return resposta
         except Exception as e:
-            erro = f"Não foi possível conectar no servidor para gerar a consulta. Por favor, tente novamente mais tarde."
+            erro = f"{e} | Não foi possível conectar no servidor para gerar a consulta. Por favor, tente novamente mais tarde."
             return erro
         
     @staticmethod
-    def consulta_sql_safe(sql):
+    def checa_consulta_segura(sql):
         sql = sql.strip().lower()
 
         # Primeiro, verifica se a consulta começa com SELECT ou WITH
@@ -64,15 +95,15 @@ class Conecta:
         return True
     
     @staticmethod
-    def executa_sql(script_sql):
+    def executa_sql(sql):
         try:
             # Verifica se a consulta é segura
-            if not Conecta.consulta_sql_safe(script_sql):
+            if not Conecta.checa_consulta_segura(sql):
                 return "Uma consulta potencialmente insegura foi detectada. Por favor, tente novamente."
 
             # Conecta no banco com cursor e obtém os resultados   
             with connection.cursor() as cursor:
-                cursor.execute(script_sql)
+                cursor.execute(sql)
                 resultados = cursor.fetchall()
                 
                 # Se não houver resultados, retorna a mensagem
@@ -85,13 +116,13 @@ class Conecta:
                 cursor.close()
                 
             # Se não houver "order by" na consulta, ordena a lista de listas   
-            if "order by" not in script_sql.upper():
+            if "order by" not in sql.upper():
                 lista_dados = sorted(resultados, key=lambda x: x[0])
             else:
                 lista_dados = resultados
                 
             # Filtra os resultados
-            lista_filtrada = Conecta.filtra_sql(lista_dados, nomes_campos)
+            lista_filtrada = Conecta.filtra_resultados(lista_dados, nomes_campos)
 
             # Gera a tabela HTML com os resultados filtrados
             return Conecta.gera_tabela_html(nomes_campos, lista_filtrada)
@@ -99,7 +130,7 @@ class Conecta:
             return f"Erro na execução da consulta. Contate o administrador. Erro: {str(e)}"
     
     @staticmethod
-    def filtra_sql(resultados, nomes_campos):
+    def filtra_resultados(resultados, nomes_campos):
         # Filtra campos indesejados
         campos_indesejados = {'SLUG', 'PASSWORD', 'ARQUIVO_PROJETO'}
         indices_validos = [i for i, nome in enumerate(nomes_campos) if nome not in campos_indesejados]

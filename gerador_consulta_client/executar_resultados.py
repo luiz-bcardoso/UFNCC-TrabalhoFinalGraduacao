@@ -12,7 +12,7 @@ from resultado import Resultado
 
 def executa_sql(sql):
     # Verifica se a consulta é segura
-    if not Conecta.consulta_sql_safe(sql):
+    if not Conecta.checa_consulta_segura(sql):
         return "Uma consulta potencialmente insegura foi detectada. Por favor, tente novamente."
 
     # Conecta no banco SQLite3 com cursor
@@ -71,8 +71,8 @@ def gerar_resultados(lista_perguntas, lista_sql_referencia, qtd_execucoes):
                     (linha_ger, campos_res) = executa_sql(sql_gerado)
                     
                     #3. Filtra os resultados
-                    lista_referencia = Conecta.filtra_sql(linha_ref, campos_ref)
-                    lista_gerada = Conecta.filtra_sql(linha_ger, campos_res)
+                    lista_referencia = Conecta.filtra_resultados(linha_ref, campos_ref)
+                    lista_gerada = Conecta.filtra_resultados(linha_ger, campos_res)
                     
                     #4. Calcula a precisão
                     precisao = calcular_precisao(lista_referencia, lista_gerada)
@@ -102,7 +102,7 @@ def testa_gera_sql(lista_sql_ref):
         print(f"Resultado da consulta SQL: {tuplas_resultados}")
         print(f"Nome dos campos: {nome_campos}")
 
-        lista_filtrada = Conecta.filtra_sql(tuplas_resultados, nome_campos)
+        lista_filtrada = Conecta.filtra_resultados(tuplas_resultados, nome_campos)
         print(f"Lista filtrada: {lista_filtrada}")
         print("-" * 50)
         
@@ -150,8 +150,8 @@ def __main__():
         "SELECT DISTINCT u.nome FROM usuario_usuario u JOIN submissao_submissao_colaborador sc ON u.id = sc.usuario_id JOIN submissao_submissao s ON sc.submissao_id = s.id JOIN comissao_comissao c ON s.id = c.avaliacao_comissao_id JOIN instituicao_instituicao i ON u.instituicao_id = i.id WHERE c.comentario LIKE '%pendência%' AND u.curso_pos_graduacao IS NOT NULL AND i.sigla = 'UFSC'"
     ]
 
-    testa_gera_precisao()
-    testa_gera_sql(lista_sql_ref)
+    #testa_gera_precisao()
+    #testa_gera_sql(lista_sql_ref)
 
     lista_resultados = gerar_resultados(lista_perguntas, lista_sql_ref, 5)
     print(*lista_resultados, sep='\n')
