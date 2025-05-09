@@ -23,13 +23,12 @@ Antes de iniciar, verifique se você possui:
 
 ---
 
-## Instalação e Configuração
+## Instalação e Configuração (Linux)
 
-### 1. Clone o repositório
+### 1. Navegar para o diretório correto
 
 ```bash
-git clone https://github.com/luiz-bcardoso/ollama-wsl2
-cd ollama-wsl2
+cd gerador_consulta_server/usando_maquina_local/
 ```
 
 ### 2. Crie e ative um ambiente virtual
