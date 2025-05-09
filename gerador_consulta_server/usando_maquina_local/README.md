@@ -82,4 +82,4 @@ Servidor XML-RPC em execução...
 
 Com essa url, é possivel conectar com o servidor em qualquer rede e realizar a chamada dos métodos.
 
-Para saber como testar a geração de uma consulta sem ser em um projeto Django acesse [esse](https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/blob/main/GeradorConsulta_Client/Conecta.py) repositório para obter a classe de conexão.
+Para saber como testar a geração de uma consulta sem ser em um projeto Django acesse [esta]([https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/blob/main/GeradorConsulta_Client/Conecta.py](https://github.com/luiz-bcardoso/UFNCC-TrabalhoFinalGraduacao/tree/main/gerador_consulta_client)) seção do repositório.
