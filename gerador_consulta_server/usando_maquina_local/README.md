@@ -16,7 +16,7 @@ Antes de iniciar, verifique se você possui:
    - Drivers atualizados
    - Para máquinas windows, recomenda-se utilizar o [Microsoft WSL](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2)
 
-2. Conta no [Ngrok](https://dashboard.ngrok.com/get-started/your-authtoken) com token de autenticação válido
+2. Conta no [Ngrok](https://ngrok.com/) com token de autenticação válido
 
 3. Python 3 instalado com suporte a ambientes virtuais (`venv`)  
    - Recomendado: **Python 3.12.3**
@@ -59,7 +59,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 ### 6. Configure o token do Ngrok
-
+Para obter seu token, clique [aqui](https://dashboard.ngrok.com/get-started/your-authtoken) após ter cadastrado sua conta.
 ```bash
 ngrok authtoken <SEU_TOKEN_AQUI>
 ```
