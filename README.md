@@ -21,9 +21,8 @@ Este projeto tem como objetivo desenvolver um aplicativo que usa a entrada do us
   * JSON
   * SQL
 
-
-
-## ** :us: Local LLM Moudule for Django Projects to Generate Reports via SQL Using NLP**
+### :us: Local LLM Module for Django Projects to Generate Reports via SQL Using NLP
+---
 This project aims to develop an application that uses the user's natural language input (NLP) to generate specific SQL queries, which will then be executed on the server's database. The user's input is processed by a Large Language Model (LLM) and, with the help of Retrieval-Augmented Generation (RAG), it retrieves the relevant tables and attributes.
 
 * The LLM does not have direct access to the database; it only has knowledge of the schema and generates the queries based on that information.
