@@ -1,15 +1,16 @@
 import datetime
+import pandas
+import sqlite3
 import xmlrpc.client
 
 from decouple import config
-from django.db import connection
-from django.template import Template, Context
 
-from django.db.migrations.executor import MigrationExecutor
+from django.db import connection
 from django.db import connections
+from django.template import Template, Context
+from django.db.migrations.executor import MigrationExecutor
 
 class Conecta:
-    
     @staticmethod
     def houve_alteracao_banco():
         try:
@@ -40,9 +41,9 @@ class Conecta:
         # Realiza a conexão com o serivor RPC pela URL.
         url_servidor = config('GERADORSQL_URL')
         try:
-            # if Conecta.houve_alteracao_banco():
-            #     Conecta.atualiza_contexto()
-            
+            # Verifica se houve alteração (somente no Django)
+            #if Conecta.houve_alteracao_banco():
+            #    Conecta.atualiza_contexto()
             proxy = xmlrpc.client.ServerProxy(url_servidor)
             return proxy
         except Exception as e:
@@ -69,13 +70,13 @@ class Conecta:
             resposta = proxy.gera_resposta(pergunta)
             return resposta
         except Exception as e:
-            erro = f"{e} | Não foi possível conectar no servidor para gerar a consulta. Por favor, tente novamente mais tarde."
+            erro = f"Não foi possível conectar no servidor para gerar a consulta. Por favor, tente novamente mais tarde."
             return erro
         
     @staticmethod
     def checa_consulta_segura(sql):
         sql = sql.strip().lower()
-
+        
         # Primeiro, verifica se a consulta começa com SELECT ou WITH
         if not sql.startswith("select") and not sql.startswith("with"):
             return False
@@ -116,7 +117,7 @@ class Conecta:
                 cursor.close()
                 
             # Se não houver "order by" na consulta, ordena a lista de listas   
-            if "order by" not in sql.upper():
+            if "order by" not in sql.lower():
                 lista_dados = sorted(resultados, key=lambda x: x[0])
             else:
                 lista_dados = resultados
