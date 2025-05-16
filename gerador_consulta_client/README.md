@@ -68,10 +68,18 @@ Obs.: Por padrão o esquema do COMIC é utilizado e já está configurado o cami
 python atualiza_contexto.py
 ```
 
-### 6. Execute o Cliente e Informe uma Pergunta
+### 6. Execute o cliente e informe uma pergunta
 
 Agora você pode rodar o cliente para testar a conexão. Basta executar o comando abaixo:
 
 ```bash
 python main.py
+```
+
+### 7. (Opcional) Gerar a tabela de resultados utilizado no trabalho final
+
+Com uma lista de perguntas e seus Scripts SQLs de referência, execute o arquivo `executa_resultados.py`.
+
+```bash
+python exectuta_resultados.py
 ```
