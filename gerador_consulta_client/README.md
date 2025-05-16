@@ -59,8 +59,16 @@ Dentro do arquivo `.env`, crie uma variável chamada `GERADORSQL_URL` e cole a U
 ```bash
 GERADORSQL_URL='<COLOQUE_SUA_URL_AQUI>'
 ```
+### 5. Atualizar o contexto RAG do servidor via RPC
 
-### 5. Execute o Cliente e Informe uma Pergunta
+Com um esquema de banco de dados de qualquer projeto, envie o arquivo .json via RPC com o código atualiza_contexto.py
+
+Obs.: Por padrão o esquema do COMIC é utilizado e já está configurado o caminho no código.
+```bash
+python atualiza_contexto.py
+```
+
+### 6. Execute o Cliente e Informe uma Pergunta
 
 Agora você pode rodar o cliente para testar a conexão. Basta executar o comando abaixo:
 
