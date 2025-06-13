@@ -15,7 +15,7 @@ import time
 esquema_banco = {}
 
 # Define a função que atualiza o contexto usando JSON
-def atualizar_contexto(json_str):
+def atualiza_contexto(json_str):
     global esquema_banco
     try:
         print('------ ATUALIZANDO CONTEXTO ------')
@@ -32,19 +32,17 @@ def atualizar_contexto(json_str):
         print('---- FIM ATUALIZAÇÃO CONTEXTO ----')
     
 # Define a função que gera consultas SQL
-def gerar_resposta(prompt_usuario: str) -> str:
+def gera_resposta(prompt_usuario: str) -> str:
     print('------ NOVA REQUISIÇÃO DO USUÁRIO ------')
     print('PERGUNTA > ', prompt_usuario)
     try:
-        # Generate and process response
         llm_response = sql_chain.invoke({
             "input_text"  : prompt_usuario,
             "schema_info" : json.dumps(esquema_banco)
         })
         print('RESPOSTA > ', llm_response)
-
-        # Extract SQL query
-        sql_query = extrair_consulta_sql(llm_response)
+        
+        sql_query = extrai_consulta_sql(llm_response)
         print('QUERYSQL > ', sql_query)
 
         return sql_query
@@ -55,7 +53,7 @@ def gerar_resposta(prompt_usuario: str) -> str:
     finally:
         print('------- FIM REQUISIÇÃO DO USUÁRIO ------')
 
-def extrair_consulta_sql(resposta_llm: str) -> str:
+def extrai_consulta_sql(resposta_llm: str) -> str:
     """
     Extrai e retorna uma consulta SQL formatada a partir da resposta do LLM,
     que deve estar entre crases triplas.
@@ -116,7 +114,7 @@ time.sleep(5)
 # Tenta recuperar o contexto para utlizar no RAG via arquivo JSON.
 try:
     with open("./esquema_banco_comic.json", "r") as file:
-      esquema_banco = atualizar_contexto(json.load(file))
+      esquema_banco = atualiza_contexto(json.load(file))
 except FileNotFoundError:
     print("Arquivo 'esquema_banco.json' não encontrado.")
 
@@ -134,18 +132,18 @@ class ManipuladorDeRequisicoes(SimpleXMLRPCRequestHandler):
     rpc_paths = ("/RPC2",)
 
 server = SimpleXMLRPCServer(
-    ("0.0.0.0", 1346),
+    ("0.0.0.0", 1337),
     requestHandler=ManipuladorDeRequisicoes,
     allow_none=True
 )
 
 # Registra somente as funções para gerar consultas e atualizar contexto via RPC.
-server.register_function(atualizar_contexto, "atualizar_contexto")
-server.register_function(gerar_resposta, "gerar_resposta")
+server.register_function(atualiza_contexto, "atualiza_contexto")
+server.register_function(gera_resposta, "gera_resposta")
 
 # Cria uma URL pública pelo ngrok para acessar o serviço fora do Google Colab.
 try:
-    url_publica = ngrok.connect(1346, bind_tls=True).public_url
+    url_publica = ngrok.connect(1337, bind_tls=True).public_url
     print("URL Pública: ", url_publica)
 except Exception as e:
     print(f"Falha ao conectar com ngrok: {str(e)}")
